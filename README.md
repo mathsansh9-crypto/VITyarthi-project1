@@ -1,6 +1,6 @@
-# Carbon Footprint Tracker & Eco-Coach
+# Carbon Footprint. Eco Coach
 
-A modular Python terminal application designed to track personal weekly carbon emissions across key lifestyle sectors—transportation, household energy usage, and dietary habits—and provide actionable, automated recommendations for reducing environmental impact.
+A Python terminal app that helps track personal weekly carbon emissions in important areas like transport home energy use and what people eat. It gives tips to help reduce the effect on the environment.
 
 ## Table of Contents
 
@@ -8,13 +8,13 @@ A modular Python terminal application designed to track personal weekly carbon e
 
 * [Features](#features)
 
-* [Technologies & Tools Used](#technologies--tools-used)
+* [Technologies And Tools Used](#technologies--tools-used)
 
 * [Project Architecture](#project-architecture)
 
-* [Steps to Install & Run](#steps-to-install--run)
+* [Steps To Install And Run](#steps-to-install--run)
 
-* [Instructions for Testing](#instructions-for-testing)
+* [Instructions For Testing](#instructions-for-testing)
 
 * [Limitations](#limitations)
 
@@ -22,54 +22,56 @@ A modular Python terminal application designed to track personal weekly carbon e
 
 ## Overview
 
-The **Carbon Footprint Tracker & Eco-Coach** helps individuals understand their personal environmental impact by converting daily routines and consumption data into measurable $CO_2$ equivalent emissions (in kilograms per week).
+The Carbon Footprint Tracker And Eco Coach helps people see how much they affect the environment by turning activities and what they use into numbers of CO2.
 
-Based on input data across transport, utility usage, and dietary choices, the application evaluates total weekly emissions, assigns an ecological rating (e.g., *Eco Hero*, *Average Consumer*, *Needs Improvement*), and invokes an intelligent coaching module that identifies the user's single highest emission area to provide tailored reduction tips and weekly goals.
+By looking at the data from transport, energy use and food choices the app finds the CO2 for the week. It gives a rating like Eco Hero, Average Consumer or Needs Improvement. Then it looks for the area with the emissions and offers tips to reduce it.
 
 ## Features
 
-* **Interactive Emission Calculations**:
+* Interactive Emission Calculations:
 
-  * **Travel Emission Module (`transport.py`)**: Accounts for car mileage (factoring in petrol, diesel, electric, or hybrid engine types), public transit usage, and monthly flight history.
+* Travel Emission Module (transport.py): Checks car use based on fuel type, public transport and flights.
 
-  * **Household Utility Module (`energy.py`)**: Converts monthly electricity (kWh) and gas (kWh) usage into weekly $CO_2$ metrics.
+* Household Utility Module (energy.py): Changes electricity and gas use into CO2 numbers each week.
 
-  * **Dietary Impact Module (`diet_impact.py`)**: Calculates food footprint based on diet style (Non-Vegetarian, Balanced, Vegetarian, Vegan) and local sourcing habits.
+* Dietary Impact Module (diet_impact.py): Figures out the carbon cost of food based on diet type and where it is bought.
 
-* **Eco Dashboard (`main.py`)**: Aggregates sector-wise emissions, displays total weekly footprint, and calculates an overall ecological performance rating.
+* Eco Dashboard (main.py): Shows all the numbers from areas adds them up and gives a rating for how well someone is doing.
 
-* **Automated Recommendation System (`coach.py`)**: Dynamically identifies top emission drivers and offers targeted advice alongside an achievable 7% reduction goal.
+* Automated Recommendation System (coach.py): Finds the areas with high emissions and gives tips to help cut them. It also sets a goal to reduce by 7%.
 
-* **Modular Design**: Clean separation of concerns with distinct Python modules for UI, data processing, and recommendation logic.
+* Modular Design: The app is split into parts so each part does its own job. There are parts for the display, calculations and recommendations.
 
-## Technologies & Tools Used
+## Technologies And Tools Used
 
-* **Programming Language**: Python 3.8+
+* Programming Language: Python 3.8+
 
-* **Version Control**: Git & GitHub
+* Version Control: Git And GitHub
 
-* **Built-in Libraries**: Pure Python standard tools 
+* Built-in Libraries: Python standard tools
 
 ## Project Architecture
 
-| **File** | **Module Name** | **Description** | 
-| `main.py` | Eco Dashboard Core | Entry point of the program. Coordinates module workflows, computes total weekly footprint, and renders the user dashboard. | 
+| File | Module Name | Description |
 
-| `transport.py` | Travel Emission Module | Prompts for transport habits and calculates emissions based on fuel types and distance travelled. | 
+| main.py | Eco Dashboard Core | Starts the program. Coordinates the parts calculates the total CO2 for the week and shows the results.
 
-| `energy.py` | Household Utility Module | Processes monthly electricity and gas consumption data into weekly CO2 values. | 
+| Transport.py | Travel Emission Module | Asks about transport habits and calculates the emissions based on fuel type and distance. |
 
-| `diet_impact.py` | Consumption Module | Evaluates dietary preferences and local sourcing choices to estimate food carbon costs. | 
+| Energy.py Household Utility Module | Changes electricity and gas use into weekly CO2 numbers.
 
-| `coach.py` | Recommendation Module | Analyzes high-emission areas in user data and auto-generates custom eco-friendly habits. | 
+| Diet_impact.py | Consumption Module | Looks at food choices and where food comes from to find the carbon cost.
 
-## Steps to Install & Run
+| Coach.py | Recommendation Module | Checks the areas with the most emissions and gives tips to help reduce them. |
+
+## Steps To Install And Run
 
 ### Prerequisites
 
-Make sure you have **Python 3.x** installed on your system. You can verify your installation by running:
+Make sure Python 3.x is on your system. Check it by running:
 
 ```
+
 python --version
 
 ```
@@ -77,84 +79,89 @@ python --version
 or
 
 ```
+
 python3 --version
 
 ```
 
-### 1. Clone the Repository
+### 1. Clone The Repository
 
-Clone this repository to your local machine:
+Get this project to your computer:
 
 ```
+
 git clone https://github.com/mathsansh9-crypto/carbon-footprint-tracker.git
+
 cd carbon-footprint-tracker
 
 ```
 
-### 2. Run the Application
+### 2. Run The Application
 
-Execute the main entry script using Python:
+Start the file with Python:
 
 ```
+
 python main.py
 
 ```
 
-## Instructions for Testing
+## Instructions For Testing
 
-To test the application's functionality across various logic branches, follow these steps in your terminal:
+To check if the app works in different situations follow these steps:
 
-1. **Launch the application**:
+1. Start the app:
 
-   ```
-   python main.py
-   
-   ```
+```
 
-2. **Test Case 1: Low Impact User (Eco Hero)**
+python main.py
 
-   * **Transport**: Car distance = `0`, Public transit = `10`, Flight hours = `0`
+```
 
-   * **Energy**: Electricity = `50` kWh, Gas = `20` kWh
+2. Test Case 1: Low Impact User (Eco Hero)
 
-   * **Diet**: Option `4` (Vegan), Local sourcing = `yes`
+* Transport: Car distance = 0 Public transit = 10 Flight hours = 0
 
-   * **Expected Output**: Rating should be `Excellent (Eco Hero)` (< 50kg co2/week)
+* Energy: Electricity = 50 kWh, Gas = 20 kWh
 
-3. **Test Case 2: High Impact User (Needs Improvement)**
+* Diet: Choose 4 (Vegan) Local sourcing = yes
 
-   * **Transport**: Car distance = `300` (Petrol), Public transit = `50`, Flight hours = `10`
+* Expected Result: Rating should be Eco Hero) (less than 50kg CO2 per week)
 
-   * **Energy**: Electricity = `400` kWh, Gas = `200` kWh
+3. Test Case 2: High Impact User (Needs Improvement)
 
-   * **Diet**: Option `1` (Non-Vegetarian), Local sourcing = `no`
+* Transport: Car distance = 300 (Petrol) transit = 50 Flight hours = 10
 
-   * **Expected Output**: Rating should be `High Impact (Needs Improvement)` (>100kg co2/week) and `coach.py` should target the transport module.
+* Energy: Electricity = 400 kWh, Gas = 200 kWh
 
-4. **Test Case 3: Invalid Input Fallback**
+* Diet: Choose 1 (Non-Vegetarian) Local sourcing = no
 
-   * In the Diet selection menu, enter an out-of-bounds choice like `99`.
+* Expected Result: Rating should be High Impact (Needs Improvement) ( than 100kg CO2 per week) and coach.py should focus on transport.
 
-   * **Expected Output**: Application should warn `"Invalid choice! Defaulting to Average diet."` and continue execution without crashing.
+4. Test Case 3: Invalid Input Fallback
+
+* In the Diet selection put a choice like 99.
+
+* Expected Result: The app should warn " choice! Defaulting to diet.". Keep running without errors.
 
 ## Limitations
 
-* **Static Conversion Factors**: Calculation multipliers (e.g., fuel factors, kWh to $CO_2$ ratios) are hardcoded estimates and do not account for regional power grid variations or real-time fuel efficiency differences.
+* Static Conversion Factors: The numbers used for calculations like fuel amounts and kWh to CO2 are. Do not change for different places or real-time conditions.
 
-* **Lack of Data Persistence**: Weekly calculation results are stored in-memory during execution and are lost once the program terminates.
+* No Data Storage: The numbers for the week are kept in memory while the app is running and are lost once the program ends.
 
-* **CLI-Only Interface**: Currently operates entirely within a Command Line Interface (CLI), which may limit visual presentation and accessibility for non-technical users.
+* Only Command Line: Works through the command line, which may not be easy for some people to use.
 
-* **Basic Input Validation**: While default fallbacks exist for menu selections, some numeric inputs lack strict boundary and type validation checks.
+* Basic Checks: Some parts have checks for menu choices but other numbers do not have checks for correct values or types.
 
 ## Future Improvements
 
-* **Data Persistence & Analytics**: Integrate SQLite or JSON file storage to log historical weekly footprints and display progress trends over time.
+* Save Data And Analyze: Add a way to keep the numbers over time and show how they change.
 
-* **Graphical User Interface (GUI)**: Develop a web dashboard (using Streamlit or Flask) or desktop GUI (Tkinter/PyQt) with visual charts and progress bars.
+* Better Interface: Make a web or desktop version with charts and easy to see progress.
 
-* **Regional & Dynamic Factors**: Incorporate APIs or region-specific lookup tables to retrieve dynamic carbon grid factors based on user location.
+* Use Data: Add ways to get live or local information to make the numbers more accurate.
 
-* **Expanded Emission Modules**: Add tracking for secondary consumption, such as shopping/waste, water usage, and digital carbon footprints.
+* Add Areas: Track parts of life, like shopping, water use and how much the internet affects the environment.
 
-* **Goal Progress Tracker**: Allow users to set personalized targets and track their progress toward achieving the 7% emission reduction goal.
+* Track Goals: Let users set their targets and see how they do in reaching the 7% reduction goal.
