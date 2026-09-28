@@ -68,7 +68,7 @@ By looking at the data from transport, energy use and food choices the app finds
 
 ### Prerequisites
 
-Make sure Python 3.x is on your system. Check it by running:
+Make sure Python 3.1+ is on your system. Check it by running:
 
 ```
 
@@ -90,8 +90,7 @@ Get this project to your computer:
 
 ```
 
-git clone https://github.com/mathsansh9-crypto/carbon-footprint-tracker.git
-
+git clone https://github.com/mathsansh9-crypto/carbon_footprint_tracker
 cd carbon-footprint-tracker
 
 ```
